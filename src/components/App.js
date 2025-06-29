@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import LoginForm from "./LoginForm";
-import './../styles/App.css';
+import "./../styles/App.css";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
   return (
-    <div id="main">
-      {/* Do not remove the main div */}
+    <div>
+      <h1>Parent Component</h1>
       {isLoggedIn ? (
-        <h1>You are logged in!</h1>
+        <p>You are logged in!</p>
       ) : (
-        <LoginForm onLogin={handleLogin} />
+        <LoginForm setIsLoggedIn={setIsLoggedIn} />
       )}
     </div>
   );
